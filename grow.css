@@ -1,0 +1,32 @@
+body {
+  width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  font-size: 1.5em;
+}
+#banner {
+  position: relative;
+/*  width:20%;
+  height:20%;*/
+  left: 40%;
+  right: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+}
+#banner img {
+  width: 20%;
+  height: 20%;
+
+}
+.form {
+  margin-left: auto;
+  margin-right: auto;
+  margin: auto;
+  width: 40%;
+
+}
+
+html {
+  background-color: #00CC66;
+}
