@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html data-ng-app="growWebApp" >
 <head>
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
   <link rel="stylesheet" type="text/css" href="grow.css">
+
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js" 
@@ -17,11 +19,23 @@
 
 <div ng-controller="formController"
   <form novalidate class="form">
-    Name: <input type="text" ng-model="user.name" /><br />
-    E-mail: <input type="email" ng-model="user.email" /><br />
-    Password: <input type="password" ng-model="user.password" /><br />
-    <input type="submit" ng-click="update(user)" value="Next" />
+  <h2>Sign Up</h2>
+    <div class="form-container">
+      <input type="text" class="form-field" placeholder="Name" ng-model="user.name" />
+      <i class="fa fa-user"></i>
+      </div><br />
+    <div class="form-container">
+      <input type="email" class="form-field" placeholder="Email" ng-model="user.email" />
+      <i class="fa fa-envelope"></i>
+      </div><br />
+    <div class="form-container">
+      <input type="password" class="form-field" placeholder="password" ng-model="user.password" />
+      <i class="fa fa-lock"></i>
+      </div><br />
+    <input type="submit" class="next-button" ng-click="update(user)" value="Next" />
   </form>
+  <br>
+  <a class="link" href="#">Already have an account?</a>
   <pre>user = {{user | json}}</pre>
   <pre>master = {{master | json}}</pre>
 </div>
