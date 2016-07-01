@@ -19,6 +19,10 @@
   "homepage": "https://github.com/alemontree/GrowWebApp#readme",
   "dependencies": {
     "angular": "^1.5.7",
-    "angular-route": "^1.5.7"
+    "angular-route": "^1.5.7",
+    "angular-ui-router": "^0.3.1"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.1"
   }
 }
