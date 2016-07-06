@@ -1,7 +1,7 @@
 const angular = require('angular');                                                                                                                                                                                                                                                                                                      ;
-const myApp = angular.module('growWebApp', [])
+const growApp = angular.module('growWebApp', [])
 
-myApp.factory('myFactory', function($http) {
+growApp.factory('myFactory', function($http) {
   let foo = "hello";
   let factory = {};
 
@@ -34,4 +34,4 @@ controllers.formController = function ($scope, myFactory) {
 }
                                                                                                                       
 
-myApp.controller(controllers);
+growApp.controller(controllers);

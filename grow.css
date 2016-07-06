@@ -5,11 +5,13 @@
   font-family: arial;
 }
 
+
 body {
   width:80%;
   margin-left:auto;
   margin-right:auto;
   font-sized: 1.5em;
+  background-color: #1D909E;
 }
 #banner {
   /*position: relative;*/
@@ -75,15 +77,14 @@ h2 {
   color: #999;
 }
 
-html {
-  background-color: #00CC66;
-}
 
 .next-button {
   display: inline-block;
+  background-color: #2FCD97;
+  color: white;
   width: 100%;
   font-size: 16px;
-  height: 40px;
+  height: 40px                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
   text-decoration: none;
   border: none;
   -moz-border-radius: 4px;
@@ -92,11 +93,18 @@ html {
 }
 
 .link {
-  float: right;
+  /*float: right;*/
+  text-align: center;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 300px;
   color: white;
   text-decoration: none;
   font-size: 1em;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 15px;
 }
 
