@@ -1,5 +1,6 @@
-const angular = require('angular');                                                                                                                                                                                                                                                                                                      ;
-const growApp = angular.module('growWebApp', [])
+const angular = require('angular');
+const router = require('angular-ui-router');
+const growApp = angular.module('growWebApp', ['router']);
 
 growApp.factory('myFactory', function($http) {
   let foo = "hello";
@@ -31,7 +32,11 @@ controllers.formController = function ($scope, myFactory) {
   };
 
   $scope.reset();
-}
-                                                                                                                      
+};
+
+growApp.config(function($stateProvider, $urlRouterProvider) {
+
+
+}                                                      
 
 growApp.controller(controllers);
