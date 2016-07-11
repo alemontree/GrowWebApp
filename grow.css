@@ -5,6 +5,17 @@
   font-family: arial;
 }
 
+html, body, .ng-scope {
+  height: 100%;
+}
+
+input {
+    vertical-align:middle;
+
+}
+input[type='radio'] { 
+  transform: scale(1.8); 
+}
 
 body {
   width:80%;
@@ -84,7 +95,7 @@ h2 {
   color: white;
   width: 100%;
   font-size: 16px;
-  height: 40px                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
+  height: 40px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
   text-decoration: none;
   border: none;
   -moz-border-radius: 4px;
@@ -94,6 +105,7 @@ h2 {
 
 .link {
   /*float: right;*/
+  position: relative;
   text-align: center;
   display: inline-block;
   margin-left: auto;
@@ -110,4 +122,40 @@ h2 {
 
 .link:hover {
   text-decoration: underline;
+
+}
+
+.view2-form-container {
+  position: relative;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 3px;
+  border-radius: 5px;
+
+
+}
+.radiofnt {
+/*  width: 100%;*/
+  font-size: 16px;
+  text-align: center;
+  padding: 8px;
+  display: inline-block;
+  height: 60px; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+
+/*PLAID*/
+#plaid-link-button {
+  background-color: #2FCD97;
+  color: white;
+  width: 250px;
+  font-size: 16px;
+  text-decoration: none;
+  height: 40px;
+  /*border: 10px solid pink;*/
+  border-radius: 4px;
 }

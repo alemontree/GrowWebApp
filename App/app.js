@@ -2,6 +2,7 @@ import angular from 'angular';
 import uirouter from 'angular-ui-router';
 const growApp = angular.module('growWebApp', [uirouter]);
 import "../grow.css";
+import plaid from 'angular-plaid-link';
 
 growApp.factory('myFactory', function($http) {
   let foo = "hello";
@@ -35,18 +36,19 @@ controllers.formController = function ($scope, myFactory) {
 
 growApp.config(['$stateProvider', '$urlRouterProvider', 
   function($stateProvider, $urlRouterProvider) {
-
   $urlRouterProvider.otherwise("/");
   $stateProvider
     .state('view1',
     {
       url: '/',
+      transclude: true,
       controller: 'formController',
       template: require("./Partials/view1.html")
     })
     .state('view2',
     {
       url: '/',
+      transclude: true,
       controller: 'formController',
       template: require("./Partials/view2.html")
     })

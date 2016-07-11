@@ -1,4 +1,4 @@
-<div ng-controller="formController">
+<div ng-controller="formController" class="form1">
   <h2>View1</h2>
   <form novalidate class="form">
   <h2>Sign Up</h2>
@@ -15,12 +15,12 @@
       <i class="fa fa-lock"></i>
       </div><br />
     <input type="submit" class="next-button" ng-click="update(user)" value="Next" />
+    <a class="link" href="#">Already have an account?</a>
   </form>
   <br>
   <br>
-  <a class="link" href="#">Already have an account?</a>
   <pre>user = {{user | json}}</pre>
   <pre>master = {{master | json}}</pre>
   <br>
-  <a href="#/view2">View 2</a>
+  <!-- <a href="#/view2">View 2</a> -->
 </div>
