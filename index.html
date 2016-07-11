@@ -17,28 +17,8 @@
 </div>
 <br>
 
-<div ng-controller="formController"
-  <form novalidate class="form">
-  <h2>Sign Up</h2>
-    <div class="form-container">
-      <input type="text" class="form-field" placeholder="Name" ng-model="user.name" />
-      <i class="fa fa-user"></i>
-      </div><br />
-    <div class="form-container">
-      <input type="email" class="form-field" placeholder="Email" ng-model="user.email" />
-      <i class="fa fa-envelope"></i>
-      </div><br />
-    <div class="form-container">
-      <input type="password" class="form-field" placeholder="password" ng-model="user.password" />
-      <i class="fa fa-lock"></i>
-      </div><br />
-    <input type="submit" class="next-button" ng-click="update(user)" value="Next" />
-  </form>
-  <br>
-  <br>
-  <a class="link" href="#">Already have an account?</a>
-  <pre>user = {{user | json}}</pre>
-  <pre>master = {{master | json}}</pre>
-</div>
+<div data-ui-view></div>
+    <a ui-sref="page1">View 1</a>
+    <a ui-sref="page2">View 2</a>
 </body>
 </html>

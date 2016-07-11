@@ -1,6 +1,7 @@
-const angular = require('angular');
-const router = require('angular-ui-router');
-const growApp = angular.module('growWebApp', ['router']);
+import angular from 'angular';
+import uirouter from 'angular-ui-router';
+const growApp = angular.module('growWebApp', [uirouter]);
+import "../grow.css";
 
 growApp.factory('myFactory', function($http) {
   let foo = "hello";
@@ -11,7 +12,6 @@ growApp.factory('myFactory', function($http) {
     // return $http.post('/services', user);
     return user;
   }
-
   return factory;
 });
 
@@ -30,13 +30,28 @@ controllers.formController = function ($scope, myFactory) {
   $scope.reset = function() {
     $scope.user = angular.copy($scope.master);
   };
-
   $scope.reset();
 };
 
-growApp.config(function($stateProvider, $urlRouterProvider) {
+growApp.config(['$stateProvider', '$urlRouterProvider', 
+  function($stateProvider, $urlRouterProvider) {
 
-
-}                                                      
+  $urlRouterProvider.otherwise("/");
+  $stateProvider
+    .state('view1',
+    {
+      url: '/',
+      controller: 'formController',
+      template: require("./Partials/view1.html")
+    })
+    .state('view2',
+    {
+      url: '/',
+      controller: 'formController',
+      template: require("./Partials/view2.html")
+    })
+    }
+  ]
+);                                               
 
 growApp.controller(controllers);
