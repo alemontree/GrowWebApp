@@ -2,18 +2,26 @@
   <h2>View2</h2>
   <form novalidate class="form">
   <h2>What is the primary reason you are investing?</h2>
-    <div class="view2-form-container">
-      <input type="radio" name="reason" id="reasonlng" class="radiofnt" value="Long-term investment" ng-model="user.reason" />
-      <label for="reasonlng">Long-term investment</label>
+    <div class="btn-group" data-toggle="buttons">
+      <div class="radio">
+        <label><input type="radio" name="optradio" id="option1" value="Long-term investment" ng-model="user.reason" />
+        Long-term investment</label>
+      </div>
       <br>
-      <input type="radio" name="reason" id="reasonsht" class="radiofnt" value="Half day" ng-model="user.reason" />
-      <label for="Short-term investment">Half day</label>
+      <div class="radio">
+        <label><input type="radio" name="optradio" id="option2" value="Half day" ng-model="user.reason" />
+        Half day</label>
+      </div>
       <br>
-      <input type="radio" name="reason" id="reasonpch" class="radiofnt" value="Major purchase" ng-model="user.reason" />
-      <label for="reasonpch">Major purchase</label>
+      <div class="radio">
+        <label><input type="radio" name="optradio" id="option3" value="Major purchase" ng-model="user.reason" />
+        Major purchase</label>
+      </div>
       <br>
-      <input type="radio" name="reason" id="reasonoth" class="radiofnt" value="Other" ng-model="user.reason" />
-      <label for="reasonoth">Other</label>
+      <div class="radio">
+        <label><input type="radio" name="optradio" id="option4" value="Other" ng-model="user.reason" />
+        Other</label>
+      </div>
       <br>
     </div><br />
 <!--     <div class="form-container">
@@ -24,13 +32,10 @@
       <input type="password" class="form-field" placeholder="password" ng-model="user.password" />
       <i class="fa fa-lock"></i>
       </div><br /> -->
-    <input type="submit" class="next-button" ng-click="update(user)" value="Next" />
+    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="update(user)">Next</button>
     <a class="link" href="#">Already have an account?</a>
   </form>
-  <br>
-  <br>
-  <pre>user = {{user | json}}</pre>
-  <pre>master = {{master | json}}</pre>
+
   <br>
   <!-- <a href="#/view1">View 1</a> -->
 </div>

@@ -9,20 +9,19 @@ html, body, .ng-scope {
   height: 100%;
 }
 
-input {
+/*input {
     vertical-align:middle;
-
-}
+}*/
 input[type='radio'] { 
   transform: scale(1.8); 
 }
 
 body {
-  width:80%;
+/*  width:80%;
   margin-left:auto;
   margin-right:auto;
-  font-sized: 1.5em;
-  background-color: #1D909E;
+  font-sized: 1.5em;*/
+  background-color: #1D909E !important;
 }
 #banner {
   /*position: relative;*/
@@ -86,6 +85,28 @@ h2 {
   right: 15px;
   top: 17px;
   color: #999;
+}
+
+.contents {
+  background-color: gold;
+}
+.contents a: link .contents a:visited{
+  color: red !important;
+}
+
+
+.full button span {
+  background-color: limegreen;
+  border-radius: 32px;
+  color: black;
+}
+.partially button span {
+  background-color: orange;
+  border-radius: 32px;
+  color: black;
+}
+.date-picker {
+
 }
 
 
