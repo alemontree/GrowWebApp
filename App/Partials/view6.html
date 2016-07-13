@@ -1,26 +1,28 @@
  <div ng-controller="formController" class="form2">
   <h2>View6</h2> 
   <form novalidate class="form">
-  <h2>What is your investment timeline?</h2>
+  <h2>Are you employed?</h2>
   <div class="btn-group">
     <div class="radio">
-      <label><input type="radio" name="optradio">less than 5 years</label>
+      <label><input type="radio" name="optradio">Student</label>
     </div>
     <br>
     <div class="radio">
-      <label><input type="radio" name="optradio">5 - 10 years</label>
+      <label><input type="radio" name="optradio">Retired</label>
     </div>
     <br>
     <div class="radio">
-      <label><input type="radio" name="optradio">10 - 15 years</label>
+      <label><input type="radio" name="optradio">Unemployed</label>
     </div><br />
     <div class="radio">
-      <label><input type="radio" name="optradio">15 - 25 years</label>
+      <label><input type="radio" name="optradio">Full-time</label>
     </div><br />
     <div class="radio">
-      <label><input type="radio" name="optradio">25+ years</label>
+      <label><input type="radio" name="optradio">Part-time</label>
     </div><br />
-
+    <div class="radio">
+      <label><input type="radio" name="optradio">Self-employed</label>
+    </div><br />
     
 
     <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="update(user)">Next</button>

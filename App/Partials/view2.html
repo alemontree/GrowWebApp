@@ -1,43 +1,23 @@
-<div ng-controller="formController" class="form2">
+
+<div ng-controller="formController" class="form1">
   <h2>View2</h2>
   <form novalidate class="form">
-  <h2>What is the primary reason you are investing?</h2>
-    <div class="btn-group" data-toggle="buttons">
-      <div class="radio">
-        <label><input type="radio" name="optradio" id="option1" value="Long-term investment" ng-model="user.reason" />
-        Long-term investment</label>
-      </div>
-      <br>
-      <div class="radio">
-        <label><input type="radio" name="optradio" id="option2" value="Half day" ng-model="user.reason" />
-        Half day</label>
-      </div>
-      <br>
-      <div class="radio">
-        <label><input type="radio" name="optradio" id="option3" value="Major purchase" ng-model="user.reason" />
-        Major purchase</label>
-      </div>
-      <br>
-      <div class="radio">
-        <label><input type="radio" name="optradio" id="option4" value="Other" ng-model="user.reason" />
-        Other</label>
-      </div>
-      <br>
-    </div><br />
-<!--     <div class="form-container">
-      <input type="email" class="form-field" placeholder="Email" ng-model="user.email" />
-      <i class="fa fa-envelope"></i>
+  <h2>Sign Up</h2>
+    <div class="form-group has-feedback">
+      <input type="text" class="form-control" placeholder="Name" ng-model="user.name" />
+      <i class="glyphicon glyphicon-user form-control-feedback"></i>
       </div><br />
-    <div class="form-container">
-      <input type="password" class="form-field" placeholder="password" ng-model="user.password" />
-      <i class="fa fa-lock"></i>
-      </div><br /> -->
-    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="update(user)">Next</button>
+    <div class="form-group has-feedback">
+      <input type="email" class="form-control" placeholder="Email" ng-model="user.email" />
+      <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+      </div><br />
+    <div class="form-group has-feedback">
+      <input type="password" class="form-control" placeholder="password" ng-model="user.password" />
+      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+      </div><br />
+    <input type="submit" class="next-button" ng-click="update(user)" value="Next" />
     <a class="link" href="#">Already have an account?</a>
   </form>
-
   <br>
-  <!-- <a href="#/view1">View 1</a> -->
+  <br>
 </div>
-
-<!--  -->

@@ -1,23 +1,41 @@
+
 <div ng-controller="formController" class="form1">
   <h2>View1</h2>
   <form novalidate class="form">
   <h2>Sign Up</h2>
-    <div class="form-container">
-      <input type="text" class="form-field" placeholder="Name" ng-model="user.name" />
-      <i class="fa fa-user"></i>
+    <div class="form-group has-feedback">
+      <input type="text" class="form-control" placeholder="Name" ng-model="user.name" />
+      <i class="glyphicon glyphicon-user form-control-feedback"></i>
       </div><br />
-    <div class="form-container">
-      <input type="email" class="form-field" placeholder="Email" ng-model="user.email" />
-      <i class="fa fa-envelope"></i>
+
+    <div class="form-group has-feedback">
+      <input type="email" class="form-control" placeholder="Email" ng-model="user.email" />
+      <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
       </div><br />
-    <div class="form-container">
-      <input type="password" class="form-field" placeholder="password" ng-model="user.password" />
-      <i class="fa fa-lock"></i>
+
+    <div class="form-group has-feedback">
+      <input ng-model="user.password" ng-required type="password" 
+      class="form-control" id="pw1" name="password" placeholder="password" />
+      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+           <div ng-show="form.password.$error.required">
+        Field required</div>
       </div><br />
+
+    <div class="form-group has-feedback">
+      <input type="password" class="form-control" id="pw2" name="confirm_password" placeholder="confirm password" 
+                  ng-model="user.password_verify" ng-required data-password-verify="user.password"/>
+      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+      <div ng-show="form.confirm_password.$error.required">
+        Field required!</div>
+    </div><br />
+
     <input type="submit" class="next-button" ng-click="update(user)" value="Next" />
     <a class="link" href="#">Already have an account?</a>
+
+    <div ng-show="form.confirm_password.$error.passwordVerify">
+        Fields are not equal!</div>
+    </div>
   </form>
   <br>
-
   <br>
 </div>

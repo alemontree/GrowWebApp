@@ -3,14 +3,15 @@ import UIrouter from 'angular-ui-router';
 import "../grow.css";
 import plaid from 'angular-plaid-link';
 import UIbootstrap from 'angular-ui-bootstrap';
-
+import Datepicker from './Utils/datepicker';
 
 const growApp = angular.module('growWebApp', [
                                               UIrouter,
                                               UIbootstrap
-                                              ]);
+                                              ]
+                              );
 
-growApp.factory('myFactory', function($http) {
+growApp.factory('myFactory', ($http) => {
   let foo = "hello";
   let factory = {};
 
@@ -21,6 +22,42 @@ growApp.factory('myFactory', function($http) {
   }
   return factory;
 });
+
+let directives = {};
+
+
+directives.passwordVerify = function() {
+  // this directive checks if the second pw is equal to the first
+    return {
+        require: "ngModel",
+        scope: {
+            passwordVerify: '='
+        },
+        link: function(scope, element, attrs, ctrl) {
+            scope.$watch(function() {
+                var combined;
+                
+                if (scope.passwordVerify || ctrl.$viewValue) {
+                   combined = scope.passwordVerify + '_' + ctrl.$viewValue; 
+                }                    
+                return combined;
+            }, function(value) {
+                if (value) {
+                    ctrl.$parsers.unshift(function(viewValue) {
+                        var origin = scope.passwordVerify;
+                        if (origin !== viewValue) {
+                            ctrl.$setValidity("passwordVerify", false);
+                            return undefined;
+                        } else {
+                            ctrl.$setValidity("passwordVerify", true);
+                            return viewValue;
+                        }
+                    });
+                }
+            });
+        }
+    };
+}
 
 
 let controllers = {};
@@ -40,72 +77,7 @@ controllers.formController = function($scope, myFactory) {
   $scope.reset();
 };
 
-controllers.DatepickerDemoCtrl = function ($scope) {
-  $scope.today = function() {
-    $scope.dt = new Date();
-  };
-  $scope.today();
-
-  $scope.clear = function() {
-    $scope.dt = null;
-  };
-
-  $scope.options = {
-    customClass: getDayClass,
-    minDate: new Date(),
-    showWeeks: true
-  };
-
-  // Disable weekend selection
-  function disabled(data) {
-    var date = data.date,
-      mode = data.mode;
-    return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
-  }
-
-  $scope.toggleMin = function() {
-    $scope.options.minDate = $scope.options.minDate ? null : new Date();
-  };
-
-  $scope.toggleMin();
-
-  $scope.setDate = function(year, month, day) {
-    $scope.dt = new Date(year, month, day);
-  };
-
-  let tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  let afterTomorrow = new Date(tomorrow);
-  afterTomorrow.setDate(tomorrow.getDate() + 1);
-  $scope.events = [
-    {
-      date: tomorrow,
-      status: 'full'
-    },
-    {
-      date: afterTomorrow,
-      status: 'partially'
-    }
-  ];
-
-  function getDayClass(data) {
-    let date = data.date,
-      mode = data.mode;
-    if (mode === 'day') {
-      let dayToCheck = new Date(date).setHours(0,0,0,0);
-
-      for (let i = 0; i < $scope.events.length; i++) {
-        let currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
-
-        if (dayToCheck === currentDay) {
-          return $scope.events[i].status;
-        }
-      }
-    }
-
-    return '';
-  }
-};
+controllers.DatepickerDemoCtrl = Datepicker;
 
 growApp.config(['$stateProvider', '$urlRouterProvider', 
   function($stateProvider, $urlRouterProvider) {
@@ -160,8 +132,15 @@ growApp.config(['$stateProvider', '$urlRouterProvider',
       controller: 'formController',
       template: require("./Partials/view7.html")
     })
+    .state('view8',
+    {
+      url: '/8',
+      transclude: true,
+      controller: 'formController',
+      template: require("./Partials/view8.html")
+    })
     }
   ]
 );                                               
-
+growApp.directive(directives);
 growApp.controller(controllers);

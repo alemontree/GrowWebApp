@@ -1,0 +1,27 @@
+ <div ng-controller="formController" class="form2">
+  <h2>View8</h2> 
+  <form novalidate class="form">
+  <h2>When is your birthday?</h2>
+  <div class="btn-group">
+    <div ng-controller="DatepickerDemoCtrl">
+        <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+
+        <h4>Inline</h4>
+        <div style="display:inline-block; min-height:290px;">
+          <uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></uib-datepicker>
+        </div>
+
+        <hr />
+        <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+        <button type="button" class="btn btn-sm btn-default" ng-click="setDate(2009, 7, 24)">2009-08-24</button>
+        <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+        <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" uib-tooltip="After today restriction">Min date</button>
+    </div>
+
+    
+
+    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="update(user)">Next</button>
+    <a class="link" href="#">Already have an account?</a>
+    </div>
+  </form>
+  </div>
