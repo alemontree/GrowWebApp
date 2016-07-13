@@ -4,7 +4,7 @@
   <h2>What is your investment timeline?</h2>
   <div class="btn-group">
     <div class="radio">
-      <label><input type="radio" name="optradio">less than 5 years</label>
+      <label><input type="radio" name="optradio" required>less than 5 years</label>
     </div>
     <br>
     <div class="radio">
@@ -23,7 +23,10 @@
 
     
 
-    <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="update(user)">Next</button>
+    <div class="btn-block">
+    <a ui-sref="view6" class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back</a>
+    <a ui-sref="view8" class="btn btn-success btn-lg btn-block" ng-click="update(user)">Next</a>
+    </div>
     <a class="link" href="#">Already have an account?</a>
     </div>
   </form>

@@ -94,6 +94,9 @@ h2 {
   color: red !important;
 }
 
+.help-inline {
+  color: red;
+}
 
 .full button span {
   background-color: limegreen;

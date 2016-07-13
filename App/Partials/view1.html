@@ -1,40 +1,42 @@
 
 <div ng-controller="formController" class="form1">
   <h2>View1</h2>
-  <form novalidate class="form">
-  <h2>Sign Up</h2>
+  <form novalidate name="form" class="form">
+  <div class="control-group" ng-class="{true: 'error'}[submitted && form.password.$error]">
+  <h3>Sign Up</h3>
     <div class="form-group has-feedback">
       <input type="text" class="form-control" placeholder="Name" ng-model="user.name" />
       <i class="glyphicon glyphicon-user form-control-feedback"></i>
-      </div><br />
-
-    <div class="form-group has-feedback">
-      <input type="email" class="form-control" placeholder="Email" ng-model="user.email" />
+      </div>
+      <br/>
+    <div class="form-group has-feedback" ng-class="{true: 'error'}[submitted && form.email.$error]">
+      <input type="email" class="form-control" placeholder="Email" name="email" 
+              ng-model="user.email" required/>
       <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
-      </div><br />
-
-    <div class="form-group has-feedback">
-      <input ng-model="user.password" ng-required type="password" 
-      class="form-control" id="pw1" name="password" placeholder="password" />
+       <span class="help-inline" ng-show="submitted && form.email.$error.required">Required</span>
+      </div>
+      <br/>
+    <div class="form-group has-feedback" ng-class="{true: 'error'}[submitted && form.password.$error]">
+      <input type="password" class="form-control" id="pw1" name="password" placeholder="Password" 
+              ng-model="user.password" required/>
       <i class="glyphicon glyphicon-lock form-control-feedback"></i>
-           <div ng-show="form.password.$error.required">
-        Field required</div>
-      </div><br />
-
-    <div class="form-group has-feedback">
-      <input type="password" class="form-control" id="pw2" name="confirm_password" placeholder="confirm password" 
-                  ng-model="user.password_verify" ng-required data-password-verify="user.password"/>
-      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
-      <div ng-show="form.confirm_password.$error.required">
-        Field required!</div>
-    </div><br />
-
-    <input type="submit" class="next-button" ng-click="update(user)" value="Next" />
-    <a class="link" href="#">Already have an account?</a>
-
-    <div ng-show="form.confirm_password.$error.passwordVerify">
-        Fields are not equal!</div>
+      <span class="help-inline" ng-show="submitted && form.password.$error.required">Required</span>
     </div>
+    <br/>
+    <div class="form-group has-feedback" ng-class="{true: 'error'}[submitted && form.confirmPassword.$error]">
+      <input type="password" class="form-control" id="pw2" name="confirmPassword" placeholder="Confirm password" 
+                  ng-model="user.confirmPassword" required compare-to="user.password"/>
+      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+      <span class="help-inline" ng-show="submitted && form.confirmPassword.$error.required">Required</span>
+    </div>
+    <br/>
+    
+      <a ui-sref="view2" class="btn btn-primary btn-lg btn-group-justified btn btn-success ng-disabled="form.$invalid" ng-click="update(user)">Next</a>
+    
+    <a class="link" href="#">Already have an account?</a>
+    <span class="help-inline" ng-show="submitted && form.confirmPassword.$error">Passwords are not equal!</span>
+
+  </div>
   </form>
   <br>
   <br>
