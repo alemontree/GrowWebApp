@@ -1,27 +1,26 @@
  <div ng-controller="formController" class="form2">
-  <h2>View6</h2> 
   <form novalidate class="form">
   <h2>Are you employed?</h2>
-  <div class="btn-group">
+  <div class="formBlock btn-group col-lg-12">
     <div class="radio">
       <label><input type="radio" name="optradio" required>Student</label>
     </div>
     <br>
     <div class="radio">
-      <label><input type="radio" name="optradio">Retired</label>
+      <label><input type="radio" name="optradio" ng-model="user.occupation">Retired</label>
     </div>
     <br>
     <div class="radio">
-      <label><input type="radio" name="optradio">Unemployed</label>
+      <label><input type="radio" name="optradio" ng-model="user.occupation">Unemployed</label>
     </div><br />
     <div class="radio">
-      <label><input type="radio" name="optradio">Full-time</label>
+      <label><input type="radio" name="optradio" ng-model="user.occupation">Full-time</label>
     </div><br />
     <div class="radio">
-      <label><input type="radio" name="optradio">Part-time</label>
+      <label><input type="radio" name="optradio" ng-model="user.occupation">Part-time</label>
     </div><br />
     <div class="radio">
-      <label><input type="radio" name="optradio">Self-employed</label>
+      <label><input type="radio" name="optradio" ng-model="user.occupation">Self-employed</label>
     </div><br />
     
 
@@ -29,7 +28,7 @@
     <a ui-sref="view5" class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back</a>
     <a ui-sref="view7" class="btn btn-success btn-lg btn-block" ng-click="update(user)">Next</a>
     </div>
-    <a class="link" href="#">Already have an account?</a>
+    <!-- <a class="link" href="#">Already have an account?</a> -->
     </div>
   </form>
   </div>

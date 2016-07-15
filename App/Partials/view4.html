@@ -1,24 +1,25 @@
 <div ng-controller="formController" class="form2">
-  <h2>View4</h2>
   <form novalidate class="form">
   <h2>What is your yearly income?</h2>
-  <div class="btn-group">
+  <div class="formBlock btn-group col-lg-12">
     <div class="radio">
-      <label><input type="radio" name="optradio">Less than $25,000</label>
+      <label><input type="radio" name="optradio" ng-model="user.reason">Less than $25,000</label>
     </div>
     <br>
     <div class="radio">
-      <label><input type="radio" name="optradio">$25,000 - $50,000</label>
+      <label><input type="radio" name="optradio" ng-model="user.reason">$25,000 - $50,000</label>
     </div>
     <br>
     <div class="radio">
-      <label><input type="radio" name="optradio">$50,000 - $100,000</label>
-    </div><br />
+      <label><input type="radio" name="optradio" ng-model="user.reason">$50,000 - $100,000</label>
+    </div>
+    <br />
     <div class="radio">
-      <label><input type="radio" name="optradio">$100,000 - $250,000</label>
-    </div><br />
+      <label><input type="radio" name="optradio" ng-model="user.reason">$100,000 - $250,000</label>
+    </div>
+    <br />
         <div class="radio">
-      <label><input type="radio" name="optradio">$250,000+</label>
+      <label><input type="radio" name="optradio" ng-model="user.reason">$250,000+</label>
     </div><br />
 
     <div class="btn-block">
@@ -26,7 +27,7 @@
     <a ui-sref="view5" class="btn btn-success btn-lg btn-block" ng-click="update(user)">Next</a>
     </div>
 
-    <a class="link" href="#">Already have an account?</a>
+    <!-- <a class="link" href="#">Already have an account?</a> -->
     </div>
   </form>
   <br>

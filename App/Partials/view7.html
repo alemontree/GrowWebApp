@@ -1,24 +1,25 @@
  <div ng-controller="formController" class="form2">
-  <h2>View7</h2> 
   <form novalidate class="form">
   <h2>What is your investment timeline?</h2>
-  <div class="btn-group">
+  <div class="formBlock col-lg-12 btn-group">
     <div class="radio">
-      <label><input type="radio" name="optradio" required>less than 5 years</label>
+      <label><input type="radio" name="optradio" ng-model="user.timeline"required>less than 5 years</label>
     </div>
     <br>
     <div class="radio">
-      <label><input type="radio" name="optradio">5 - 10 years</label>
+      <label><input type="radio" name="optradio" ng-model="user.timeline">5 - 10 years</label>
     </div>
     <br>
     <div class="radio">
-      <label><input type="radio" name="optradio">10 - 15 years</label>
-    </div><br />
+      <label><input type="radio" name="optradio" ng-model="user.timeline">10 - 15 years</label>
+    </div>
+    <br />
     <div class="radio">
-      <label><input type="radio" name="optradio">15 - 25 years</label>
-    </div><br />
+      <label><input type="radio" name="optradio" ng-model="user.timeline">15 - 25 years</label>
+    </div>
+    <br />
     <div class="radio">
-      <label><input type="radio" name="optradio">25+ years</label>
+      <label><input type="radio" name="optradio" ng-model="user.timeline">25+ years</label>
     </div><br />
 
     
@@ -27,7 +28,7 @@
     <a ui-sref="view6" class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back</a>
     <a ui-sref="view8" class="btn btn-success btn-lg btn-block" ng-click="update(user)">Next</a>
     </div>
-    <a class="link" href="#">Already have an account?</a>
+    <!-- <a class="link" href="#">Already have an account?</a> -->
     </div>
   </form>
   </div>

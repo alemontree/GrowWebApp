@@ -1,41 +1,42 @@
 <div ng-controller="formController" class="form2">
-  <h2>View3</h2>
   <form novalidate class="form" name="form">
-  <div class="control-group">
-  <h3>What is the primary reason you are investing?</h3>
-    <div class="btn-group col-lg-12" data-toggle="buttons">
+  <div class="control-group col-lg-12">
+  <h2>What is the primary reason you are investing?</h2>
+    <div class="formBlock btn-group col-lg-12" data-toggle="buttons">
       <div class="radio">
-        <label><input type="radio" name="optradio" id="option1" value="Long-term investment" 
-                      ng-model="user.reason" required />
-        Long-term investment</label>
+        <label>
+        <input type="radio" name="optradio" value="Long-term investment" 
+                      ng-model="user.reason" required />Long-term investment
+        </label>
       </div>
       <br>
       <div class="radio">
-        <label><input type="radio" name="optradio" id="option2" value="Half day" 
-                ng-model="user.reason" />
-        Half day</label>
+        <label>
+        <input type="radio" name="optradio" value="Half day" 
+                ng-model="user.reason" />Half day
+        </label>
       </div>
       <br>
       <div class="radio">
-        <label><input type="radio" name="optradio" id="option3" value="Major purchase" 
-                ng-model="user.reason" />
-        Major purchase</label>
+        <label>
+        <input type="radio" name="optradio" value="Major purchase" 
+                ng-model="user.reason" />Major purchase
+        </label>
       </div>
       <br>
       <div class="radio">
-        <label><input type="radio" name="optradio" id="option4" value="Other" 
-                ng-model="user.reason" />
-        Other</label>
+        <label>
+        <input type="radio" name="optradio" value="Other" 
+                ng-model="user.reason" />Other
+        </label>
       </div>
       <br>
     <div class="btn-group.btn-group-justified col-lg-12">
-      <a ui-sref="view2"href="" class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back
-      </a>
-      <a ui-sref="view4" class="btn btn-success btn-lg btn-block" ng-click="update(user)">Next
-      </a>
+      <a ui-sref="view2"href="" class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back</a>
+      <a ui-sref="view4" class="btn btn-success btn-lg btn-block" ng-click="update(user)">Next</a>
     </div>
     </div><br />
-    <a class="link" href="#">Already have an account?</a>
+<!--     <a class="link" href="#">Already have an account?</a> -->
     </div>
   </form>
 

@@ -6,6 +6,7 @@
 }
 
 html, body, .ng-scope {
+  padding-top:20px; 
   height: 100%;
 }
 
@@ -112,9 +113,11 @@ h2 {
 
 }
 
+.formBlock {
+  color: white;
+}
 
 .next-button {
-  display: inline-block;
   background-color: #2FCD97;
   color: white;
   width: 100%;
@@ -131,7 +134,7 @@ h2 {
   /*float: right;*/
   position: relative;
   text-align: center;
-  display: inline-block;
+  /*display: inline-block;*/
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -163,7 +166,7 @@ h2 {
   font-size: 16px;
   text-align: center;
   padding: 8px;
-  display: inline-block;
+/*  display: inline-block;*/
   height: 60px; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

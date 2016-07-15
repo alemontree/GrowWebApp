@@ -1,8 +1,7 @@
  <div ng-controller="formController" class="form2">
-  <h2>View8</h2> 
   <form novalidate class="form">
   <h2>When is your birthday?</h2>
-  <div class="btn-group">
+  <div class="formBlock btn-group">
     <div ng-controller="DatepickerDemoCtrl">
         <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
 
@@ -23,7 +22,7 @@
     <a ui-sref="view7"  class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back</a>
     <a ui-sref="view9"  class="btn btn-success btn-lg btn-block" ng-click="update(user)">Next</a>
     </div>
-    <a class="link" href="#">Already have an account?</a>
+    <!-- <a class="link" href="#">Already have an account?</a> -->
     </div>
   </form>
   </div>
