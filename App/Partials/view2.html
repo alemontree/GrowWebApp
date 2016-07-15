@@ -1,7 +1,9 @@
 
-<div ng-controller="formController" class="form1">
-  <form novalidate class="form">
+<div ng-controller="formController" class="form">
+  <form novalidate class="form" name="form">
   <h2>Personal Info</h2>
+  <br>
+  <div class="control-group col-lg-12">
     <div class="form-group has-feedback">
       <input type="text" class="form-control" placeholder="First Name" ng-model="user.fname" required />
       <i class="glyphicon glyphicon-user form-control-feedback"></i>
@@ -11,11 +13,12 @@
       <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
       </div><br />
     <div class="form-group has-feedback">
-      <input type="number" class="form-control" placeholder="password" ng-model="user.phonenumber" required/>
+      <input type="number" class="form-control" placeholder="Phone number" ng-model="user.phonenumber" required/>
       <i class="glyphicon glyphicon-lock form-control-feedback"></i>
       </div><br />
     <a ui-sref="view1" class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back</a>  
     <a ui-sref="view3" class="btn btn-primary btn-lg btn-group-justified btn btn-success ng-disabled="form.$invalid" ng-click="update(user)">Next</a>
+    </div>
   </form>
   <br>
   <br>

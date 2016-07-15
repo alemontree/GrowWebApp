@@ -44,7 +44,7 @@ directives.compareTo = function() {
             });
         }
     };
-}
+};
 
 
 let controllers = {};
@@ -52,8 +52,8 @@ controllers.formController = function($scope, myFactory) {
   $scope.master = {};
 
   $scope.update = function(user) {
-    console.log(user);
-    console.log(user.email);
+    console.log("user: ", user);
+    console.log("master: ", master);
     $scope.master = angular.copy(user);
     myFactory.sendRequest(user);
   };
