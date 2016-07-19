@@ -23,25 +23,25 @@ import services from '../Services/services';
 // };
 
 
-class FormController {
-  constructor() {
-    this.master = {};
-  }
-  update(user) {
-    console.log("user: ", user);
-    this.master = angular.extend(this.master, user);
-    console.log("master: ", this.master);
-    services.sendRequest(this.master);
-  }
+// class FormController {
+//   constructor() {
+//     this.master = {};
+//   }
+//   update(user) {
+//     console.log("user: ", user);
+//     this.master = angular.extend(this.master, user);
+//     console.log("master: ", this.master);
+//     services.sendRequest(this.master);
+//   }
 
-  reset() {
-    this.user = angular.copy(this.master);
-  };
+//   reset() {
+//     this.user = angular.copy(this.master);
+//   };
 
-}
+// }
 
-// controllers.DatepickerDemoCtrl = Datepicker;
-// FormController.$inject
+// // controllers.DatepickerDemoCtrl = Datepicker;
+// // FormController.$inject
 
 
-export default FormController;
+// export default FormController;

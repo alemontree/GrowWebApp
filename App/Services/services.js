@@ -1,25 +1,25 @@
-import angular from 'angular';
+// import angular from 'angular';
 
 // angular.module('growWebApp.services', [])
 
-class GrowService {
-  constructor($http) {
-    this.$http = $http;
-    this.foo = "hell";
-  }
+// class GrowService {
+//   constructor($http) {
+//     this.$http = $http;
+//     this.foo = "hell";
+//   }
 
-  sendRequest(user) {
-    console.log(user);
-//     // return $http.post('api/services', user);
-//     return user;
-  }
+//   sendRequest(user) {
+//     console.log(user);
+// //     // return $http.post('api/services', user);
+// //     return user;
+//   }
 
-}
-GrowService.$inject = ['$http'];
+// }
+// GrowService.$inject = ['$http'];
 
-export default angular.module('services.growService', [])
-  .service('growService', GrowService)
-  .name;
+// export default angular.module('services.growService', [])
+//   .service('growService', GrowService)
+//   .name;
 
 // 
 // factory('myFactory', ($http) => {

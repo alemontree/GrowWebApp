@@ -1,29 +1,34 @@
 'use strict';
 import angular from 'angular';
-import UIrouter from 'angular-ui-router';
+import AngularUiRouter from 'angular-ui-router';
+import AngularAnimate from 'angular-animate';
 import "../grow.css";
 import plaid from 'angular-plaid-link';
-import UIbootstrap from 'angular-ui-bootstrap';
-import Datepicker from './Utils/datepicker';
-import GrowService from './Services/services';
-import FormController from './Controllers/controllers';
-import compareTo from './Directives/directives';
+import AngularBootstrap from 'angular-ui-bootstrap';
+import Form from './Components/Form/form';
 
-const growApp = angular.module('growWebApp', [
-                                              UIrouter,
-                                              UIbootstrap,
-                                              FormController,
-                                              GrowService,
-                                              compareTo
-                                              // growWebApp.services,
-                                              // growWebApp.directives,
-                                              // growWebApp.controllers
-                                              ]
-                              );
+"use strict";
+// import Datepicker from './Utils/datepicker';
+// import GrowService from './Services/services';
+// import FormController from './Controllers/controllers';
+// import compareTo from './Directives/directives';
 
 
+angular.module('growWebApp', [
+        // frameworks
+        AngularUiRouter,
+        AngularAnimate,
+        AngularBootstrap,
 
-growApp.config(['$stateProvider', '$urlRouterProvider', 
+        // components
+        Form
+
+  ])
+
+
+
+
+growWebApp.config(['$stateProvider', '$urlRouterProvider', 
   function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/1");
   $stateProvider
@@ -80,15 +85,14 @@ growApp.config(['$stateProvider', '$urlRouterProvider',
     {
       url: '/8',
       transclude: true,
-      controller: 'formController',
+      controller: 'FormController',
       template: require("./Partials/view8.html")
     })
     }
   ]
 );                                               
-// growApp.directive(directives);
-// growApp.controller(controllers);
 
-// controllers();
-// services();
-// directives();
+
+angular.element(document).ready(() => {
+  angular.bootstrap(document, ['growWebApp']);
+})
