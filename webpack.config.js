@@ -6,7 +6,7 @@
 
  module.exports = {
   entry: [
-  // 'webpack-dev-server/client?http://localhost:8080',
+  // 'webpack-dev-server/client?http://localhost:6060',
   'webpack/hot/only-dev-server',
   __dirname + '/App/app.js',
   ],
@@ -44,6 +44,7 @@
        filename: 'bundle.js'
      },
   devServer: {
+    port: 6060,
     contentBase: './build',
     hot: true,
     inline: true
