@@ -5,7 +5,7 @@
   font-family: arial;
 }
 
-html, body, .ng-scope {
+html, body{
   padding-top:20px; 
   height: 100%;
 }
@@ -22,7 +22,10 @@ body {
   margin-left:auto;
   margin-right:auto;
   font-sized: 1.5em;*/
-  background-color: #1D909E !important;
+  /*background: linear-gradient(to right, #E29AFA 10%, #0492A5 30% , #17AA78 90%);*/
+  background: linear-gradient(to bottom, #17AA78, #2FCD97);
+  
+  /*background-color: #1D909E !important;*/
 }
 #banner {
   /*position: relative;*/

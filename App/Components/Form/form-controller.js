@@ -7,13 +7,23 @@ import FormService from './form-service';
 
 export default class FormController {
   constructor() {
+    // this.FormService = FormService;
     this.master = {};
+    this.service = new FormService;
   }
   update(user) {
+
+    for (var el in this.service) {
+      console.log(el);
+    }
+
     console.log("user: ", user);
     this.master = angular.extend(this.master, user);
     console.log("master: ", this.master);
-    services.sendRequest(this.master);
+    console.log(this.service);
+
+    console.log(typeof this.service.sendRequest)
+    this.service.sendRequest(this.master);
   }
 
   reset() {
@@ -23,7 +33,7 @@ export default class FormController {
 }
 
 // controllers.DatepickerDemoCtrl = Datepicker;
-// FormController.$inject
+// FormController.$inject(['FormService']);
 
 
 

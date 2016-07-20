@@ -9,13 +9,25 @@ export default class FormService {
   }
 
   sendRequest(user) {
+    console.log("sendRequest is called...");
     console.log(user);
 //     // return $http.post('api/services', user);
-//     return user;
+    return user;
   }
-
 }
+
 FormService.$inject = ['$http'];
+
+
+// class FormServiceFactory {
+//   constructor(user) {
+//     this.user = user;
+
+//   }
+//   newFormService() {
+//     return 
+//   }
+// }
 
 // export default angular.module('services.growService', [])
 //   .service('growService', GrowService)
