@@ -7,29 +7,21 @@ import plaid from 'angular-plaid-link';
 import AngularBootstrap from 'angular-ui-bootstrap';
 import Form from './Components/Form/form';
 
-"use strict";
-// import Datepicker from './Utils/datepicker';
-// import GrowService from './Services/services';
-// import FormController from './Controllers/controllers';
-// import compareTo from './Directives/directives';
-
 
 angular.module('growWebApp', [
-        // frameworks
-        AngularUiRouter,
-        AngularAnimate,
-        AngularBootstrap,
+            // frameworks
+              AngularUiRouter,
+              AngularAnimate,
+              AngularBootstrap,
 
-        // components
-        Form
+              // components
+              Form.name
 
-  ])
+])
+.config(config);
 
 
-
-
-growWebApp.config(['$stateProvider', '$urlRouterProvider', 
-  function($stateProvider, $urlRouterProvider) {
+function config($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/1");
   $stateProvider
     .state('view1',
@@ -88,11 +80,8 @@ growWebApp.config(['$stateProvider', '$urlRouterProvider',
       controller: 'FormController',
       template: require("./Partials/view8.html")
     })
-    }
-  ]
-);                                               
+}
 
-
-angular.element(document).ready(() => {
-  angular.bootstrap(document, ['growWebApp']);
-})
+// angular.element(document).ready(() => {
+//   angular.bootstrap(document, ['growWebApp']);
+// })
