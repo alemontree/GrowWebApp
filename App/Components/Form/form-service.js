@@ -2,22 +2,37 @@ import angular from 'angular';
 
 // angular.module('growWebApp.services', [])
 
-export default class FormService {
+let moduleName = 'Form';
+
+class FormService {
   constructor($http) {
     this.$http = $http;
     this.foo = "hell";
+    this.master = {};
   }
 
   sendRequest(user) {
     console.log("sendRequest is called...");
     console.log(user);
-//     // return $http.post('api/services', user);
+//  return $http.post('api/services', user);
+    this.master = angular.extend(this.master, user);
+    console.log(this.master);
+
+
     return user;
+
   }
+  static formFactory($http) {
+    return new FormController($http);
+    }
 }
 
-FormService.$inject = ['$http'];
+FormService.formFactory.$inject = ['$http'];
 
+angular.module(moduleName, [])
+  .factory('formService', FormService.formFactory);
+
+export default moduleName;
 
 // class FormServiceFactory {
 //   constructor(user) {
