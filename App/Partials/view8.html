@@ -2,28 +2,28 @@
   <form novalidate class="form">
   <br>
   <h2>When is your birthday?</h2>
-  <div class="formBlock btn-group">
-    <div ng-controller="DatepickerDemoCtrl">
-        <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+  <!-- <div class="formBlock btn-group"> -->
+<!--     <div ng-controller="datepickerDemoCtrl"> -->
+        <!-- <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre> -->
 
-        <h4>Inline</h4>
+        <!-- <h4>Inline</h4> -->
         <div style="display:inline-block; min-height:290px;">
-          <uib-datepicker ng-model="dt" class="well well-sm" datepicker-options="options"></uib-datepicker>
+          <uib-datepicker ng-model="formCtrl.user.birthdate" class="well well-sm"></uib-datepicker>
         </div>
-
+<!-- 
         <hr />
         <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
         <button type="button" class="btn btn-sm btn-default" ng-click="setDate(2009, 7, 24)">2009-08-24</button>
         <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
-        <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" uib-tooltip="After today restriction">Min date</button>
-    </div>
+        <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" uib-tooltip="After today restriction">Min date</button> -->
+<!--     </div> -->
 
     <br>
     <div class="btn-block">
     <a ui-sref="view7"  class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back</a>
-    <a ui-sref="view9"  class="btn btn-success btn-lg btn-block" ng-click="update(user)">Next</a>
+    <a ui-sref="view9"  class="btn btn-success btn-lg btn-block" ng-click="formCtrl.update(formCtrl.user.birthdate)">Next</a>
     </div>
     <!-- <a class="link" href="#">Already have an account?</a> -->
-    </div>
+    <!-- </div> -->
   </form>
   </div>

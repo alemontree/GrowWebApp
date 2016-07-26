@@ -8,6 +8,7 @@ import plaid from 'angular-plaid-link';
 import AngularBootstrap from 'angular-ui-bootstrap';
 import Form from './Components/Form/form';
 import PlaidComponent from './Components/Plaid/plaid';
+// import Datepicker from '/Utils/datepicker'; 
 
 
 angular.module('growWebApp', [
@@ -15,7 +16,7 @@ angular.module('growWebApp', [
               AngularUiRouter,
               // AngularAnimate
               // AngularPlaidLink
-              // AngularBootstrap
+              AngularBootstrap,
 
               // components
               Form.name

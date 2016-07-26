@@ -5,7 +5,7 @@ import angular from 'angular';
 
 class FormService {
   constructor($http) {
-    this.$http = $http;
+    this.http = $http;
     this.foo = "hell";
     this.master = {};
   }
@@ -16,14 +16,14 @@ class FormService {
 //  return $http.post('api/services', user);
     this.master = angular.extend(this.master, user);
     console.log("master in service ", this.master);
-
+    this.http.post('api/services', this.master);
 
     return user;
 
   }
   static formFactory($http) {
     return new FormController($http);
-    }
+  }
 }
 
 FormService.formFactory.$inject = ['$http'];
