@@ -1,0 +1,44 @@
+ <div ng-controller="formController as formCtrl" class="form">
+  <form novalidate class="form">
+  <br>
+  <h2>Log in with Plaid</h2>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+      <div class="row" ng-controller="plaidController as plaid">
+        <div class="col-md-6">
+            <p><strong>Bank Select</strong></p>
+            <button class="btn btn-success" ng-click="plaid.openPlaid()" ng-disabled="!plaid.plaidIsLoaded">
+                Link Account
+            </button>
+
+            <br/>
+            <br/>
+            <p><em>or</em></p>
+
+            <p><strong>Direct Bank Login</strong></p>
+
+            <button class="btn btn-primary" ng-click="plaid.openPlaid('chase')" ng-disabled="!plaid.plaidIsLoaded">
+                Link Chase
+            </button>
+
+            <button class="btn btn-danger" ng-click="plaid.openPlaid('bofa')" ng-disabled="!plaid.plaidIsLoaded">
+                Link Bank of America
+            </button>
+        </div>
+
+        <div class="col-md-6">
+            <h4>Public Token:</h4>
+            <pre>{{token}}</pre>
+        </div>
+      </div>
+  
+
+
+    <br>
+    <div class="btn-block">
+    <a ui-sref="view7"  class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back</a>
+    <a ui-sref="view9"  class="btn btn-success btn-lg btn-block" ng-click="formCtrl.update(formCtrl.user.plaid)">Next</a>
+    </div>
+
+  </form>
+  </div>

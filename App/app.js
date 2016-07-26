@@ -2,11 +2,14 @@
 import angular from 'angular';
 import AngularUiRouter from 'angular-ui-router';
 import AngularAnimate from 'angular-animate';
-import AngularPlaidLink from 'angular-plaid-link';
+// import AngularPlaidLink from '../node_modules/angular-plaid-link/src/angular-plaid-link';
 import "../grow.css";
 import AngularBootstrap from 'angular-ui-bootstrap';
 import Form from './Components/Form/form';
 import PlaidComponent from './Components/Plaid/plaid';
+// import plaid from 'plaid';
+
+// import plaid from 'ng-plaid';
 // import Datepicker from '/Utils/datepicker'; 
 
 
@@ -16,23 +19,30 @@ angular.module('growWebApp', [
               // AngularAnimate
               // AngularPlaidLink,
               AngularBootstrap,
+              // 'angular-plaid-link',
+              // 'ng-plaid',
+              // plaid,
 
               // components
-              Form.name
+              PlaidComponent.name,
+
+              Form.name,
+              // angular-plaid-link.name
               // PlaidComponent.name
 
 ])
 .config(config);
-console.log(AngularPlaidLink.name);
 
-function config($stateProvider, $urlRouterProvider ) {
-  //$plaidLinkProvider
-  // $plaidLinkProvider.init({
-  //     clientName: 'growWebApp',
-  //     env: 'tartan',
-  //     key: 'test_key',
-  //     product: 'auth'
-  // });
+function config($stateProvider, $urlRouterProvider, plaidLinkProvider) {
+
+
+  plaidLinkProvider.init({
+        clientName: 'My App',
+        env: 'tartan',
+        key: 'test_key',
+        product: 'auth'
+  });
+
   $urlRouterProvider.otherwise("/1");
   $stateProvider
     .state('view1',
@@ -90,6 +100,13 @@ function config($stateProvider, $urlRouterProvider ) {
       transclude: true,
       controller: 'formController',
       template: require("./Partials/view8.html")
+    })
+    .state('view9',
+    {
+      url: '/9',
+      transclude: true,
+      controller: 'formController',
+      template: require("./Partials/view9.html")
     });
 };
 

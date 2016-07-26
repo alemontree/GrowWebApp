@@ -2,32 +2,49 @@
 import angular from 'angular';
 
 
-export default class FormController{
-  constructor() {
-
+export default class PlaidController{
+  constructor(plaidLink) {
+    this.plaidLink = plaidLink;
+    this.token = '';
+    this.plaidIsLoaded = this.plaidLink.isLoaded;
+    this.plaidLink.create({
+      onSuccess: function(token) {
+          $scope.token = token;
+      },
+      onExit: function() {
+          console.log('user closed');
+      }
+    });
+    console.log("plaidlink initialized");
   }
 
-  // create({
-  //     clientName: 'My App',
-  //     env: 'tartan',
-  //     key: 'test_key',
-  //     product: 'auth'
-  //   } {
-  //   ,
 
-  //   // success callback
-  //   success(token) {
-  //       console.log('token: ', token);
-        
-  //       // pass the token to your sever to retrieve an `access_token`
-  //       // see https://github.com/plaid/link#step-3-write-server-side-handler
-  //   }
-    
-  //   // user exit callback
-  //   exit() {
-      
-  //   }
-  // }
-
+  openPlaid(bankType) {
+    console.log('ctrl openPlaid', bankType);
+    this.plaidLink.open(bankType);
+  }
 }
+
+
+
+
+// function($scope, plaidLink) {
+//             $scope.token = '';
+//             $scope.plaidIsLoaded = plaidLink.isLoaded;
+
+//             plaidLink.create({
+//                 onSuccess: function(token) {
+//                     $scope.token = token;
+//                 },
+//                 onExit: function() {
+//                     console.log('user closed');
+//                 }
+//             });
+
+//             $scope.openPlaid = function(bankType) {
+//                 plaidLink.open(bankType);
+//             };
+//         }
+
+// }
 
