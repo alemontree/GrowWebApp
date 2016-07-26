@@ -11,7 +11,7 @@ export default class PlaidController{
     this.plaidLink.create({
       onSuccess: function(token) {
         console.log(token);
-        // console.log(this.token);
+        console.log(self.token);
         self.token = token;
 
       },
