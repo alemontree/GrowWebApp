@@ -13,9 +13,9 @@ import PlaidComponent from './Components/Plaid/plaid';
 angular.module('growWebApp', [
             // frameworks
               AngularUiRouter,
-              AngularAnimate,
-              AngularPlaidLink,
-              AngularBootstrap,
+              // AngularAnimate
+              // AngularPlaidLink
+              // AngularBootstrap
 
               // components
               Form.name
@@ -25,7 +25,8 @@ angular.module('growWebApp', [
 .config(config);
 
 
-function config($stateProvider, $urlRouterProvider, $plaidLinkProvider) {
+function config($stateProvider, $urlRouterProvider ) {
+  //$plaidLinkProvider
   // $plaidLinkProvider.init({
   //     clientName: 'growWebApp',
   //     env: 'tartan',
@@ -92,6 +93,6 @@ function config($stateProvider, $urlRouterProvider, $plaidLinkProvider) {
     });
 };
 
-angular.element(document).ready(() => {
-  angular.bootstrap(document, ['growWebApp']);
-})
+// angular.element(document).ready(() => {
+//   angular.bootstrap(document, ['growWebApp']);
+// })

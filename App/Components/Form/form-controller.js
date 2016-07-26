@@ -5,18 +5,18 @@ import FormService from './form-service';
 
 export default class FormController {
   constructor(formService) {
-    this.master = {};
-    this.service = new FormService;
+    this.formService = formService;
   }
   update(user) {
 
     // console.log("user: ", user);
-    this.master = angular.extend(this.master, user);
-    console.log("master: ", this.master);
-    // console.log(this.service);
+    // this.master = angular.extend(this.master, user);
 
-    console.log(typeof this.service.sendRequest)
-    this.service.sendRequest(this.master);
+    // var formService = new FormService;
+    // update(user, formService ) {
+    // this.formService...
+
+    this.formService.sendRequest(this.user);
   }
 
   reset() {
@@ -25,5 +25,5 @@ export default class FormController {
 
 }
 
-FormController.$inject = ['formService'];
+// FormController.$inject = ['formService'];
 
