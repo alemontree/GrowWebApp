@@ -5,14 +5,18 @@ import angular from 'angular';
 export default class PlaidController{
   constructor(plaidLink) {
     this.plaidLink = plaidLink;
+    let self = this;
     this.token = '';
     this.plaidIsLoaded = this.plaidLink.isLoaded;
     this.plaidLink.create({
       onSuccess: function(token) {
-          $scope.token = token;
+        console.log(token);
+        // console.log(this.token);
+        self.token = token;
+
       },
       onExit: function() {
-          console.log('user closed');
+        console.log('user closed');
       }
     });
     console.log("plaidlink initialized");

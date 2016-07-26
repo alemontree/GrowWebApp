@@ -1,21 +1,11 @@
 import angular from 'angular';
 import PlaidController from './plaid-controller';
-require('./plaid-link');
-// import Plaid from 'plaid';
 
-// import PlaidController from './plaid-controller';
-// import AngularPlaidLink from 'angular-plaid-link';
-
-
-// export default angular.module('Plaid', [AngularPlaidLink])
-//     .controller('plaidController', PlaidController);
-
-// console.log(plaid.environments);
 export default angular.module('angular-plaid-link', [])
   .controller('plaidController', PlaidController)
   .provider('plaidLink', [
     function() {
-      var configDefaults = {};
+      const configDefaults = {};
 
       this.init = function(options) {
         console.log('plaid init');
@@ -27,15 +17,16 @@ export default angular.module('angular-plaid-link', [])
         '$rootScope',
 
         function($rootScope) {
-          var handler, onLoadCallback, onSuccessCallback;
+          let handler, onLoadCallback, onSuccessCallback;
 
-          var loaded = false,
+          let loaded = false,
             config = {
               onLoad: function() {
                 loaded = true;
                 _triggerCallback(onLoadCallback);
               },
               onSuccess: function(token) {
+                console.log(token);
                 _triggerCallback(onSuccessCallback, token);
               }
             };

@@ -6,29 +6,29 @@
 
       <div class="row" ng-controller="plaidController as plaid">
         <div class="col-md-6">
-            <p><strong>Bank Select</strong></p>
-            <button class="btn btn-success" ng-click="plaid.openPlaid()" ng-disabled="!plaid.plaidIsLoaded">
-                Link Account
-            </button>
+          <p><strong>Bank Select</strong></p>
+          <button class="btn btn-success" ng-click="plaid.openPlaid()" ng-disabled="!plaid.plaidIsLoaded">
+              Link Account
+          </button>
 
-            <br/>
-            <br/>
-            <p><em>or</em></p>
+          <br/>
+          <br/>
+          <p><em>or</em></p>
 
-            <p><strong>Direct Bank Login</strong></p>
+          <p><strong>Direct Bank Login</strong></p>
 
-            <button class="btn btn-primary" ng-click="plaid.openPlaid('chase')" ng-disabled="!plaid.plaidIsLoaded">
-                Link Chase
-            </button>
+          <button class="btn btn-primary" ng-click="plaid.openPlaid('chase')" ng-disabled="!plaid.plaidIsLoaded">
+              Link Chase
+          </button>
 
-            <button class="btn btn-danger" ng-click="plaid.openPlaid('bofa')" ng-disabled="!plaid.plaidIsLoaded">
-                Link Bank of America
-            </button>
+          <button class="btn btn-danger" ng-click="plaid.openPlaid('bofa')" ng-disabled="!plaid.plaidIsLoaded">
+              Link Bank of America
+          </button>
         </div>
 
         <div class="col-md-6">
             <h4>Public Token:</h4>
-            <pre>{{token}}</pre>
+            <pre>{{plaid.token}}</pre>
         </div>
       </div>
   

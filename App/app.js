@@ -15,13 +15,8 @@ import PlaidComponent from './Components/Plaid/plaid';
 
 angular.module('growWebApp', [
             // frameworks
-              AngularUiRouter,
-              // AngularAnimate
-              // AngularPlaidLink,
+              AngularUiRouter,  
               AngularBootstrap,
-              // 'angular-plaid-link',
-              // 'ng-plaid',
-              // plaid,
 
               // components
               PlaidComponent.name,
