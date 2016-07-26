@@ -4,7 +4,6 @@ import AngularUiRouter from 'angular-ui-router';
 import AngularAnimate from 'angular-animate';
 import AngularPlaidLink from 'angular-plaid-link';
 import "../grow.css";
-import plaid from 'angular-plaid-link';
 import AngularBootstrap from 'angular-ui-bootstrap';
 import Form from './Components/Form/form';
 import PlaidComponent from './Components/Plaid/plaid';
@@ -15,7 +14,7 @@ angular.module('growWebApp', [
             // frameworks
               AngularUiRouter,
               // AngularAnimate
-              // AngularPlaidLink
+              // AngularPlaidLink,
               AngularBootstrap,
 
               // components
@@ -24,7 +23,7 @@ angular.module('growWebApp', [
 
 ])
 .config(config);
-
+console.log(AngularPlaidLink.name);
 
 function config($stateProvider, $urlRouterProvider ) {
   //$plaidLinkProvider
