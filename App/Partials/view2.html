@@ -5,20 +5,21 @@
   <br>
   <div class="control-group col-lg-12">
     <div class="form-group has-feedback">
-      <input type="text" class="form-control" placeholder="First Name" ng-model="formCtrl.user.fname" required />
-      <i class="glyphicon glyphicon-user form-control-feedback"></i>
-      </div><br />
+        <input type="text" class="form-control" placeholder="First Name" ng-model="formCtrl.user.fname" required />
+        <i class="glyphicon glyphicon-user form-control-feedback"></i>
+    </div><br />
     <div class="form-group has-feedback">
-      <input type="text" class="form-control" placeholder="Last Name" ng-model="formCtrl.user.lname" required/>
-      <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
-      </div><br />
+        <input type="text" class="form-control" placeholder="Last Name" ng-model="formCtrl.user.lname" required/>
+        <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+    </div><br />
     <div class="form-group has-feedback">
-      <input type="number" class="form-control" placeholder="Phone number" ng-model="formCtrl.user.phonenumber" required/>
-      <i class="glyphicon glyphicon-lock form-control-feedback"></i>
-      </div><br />
-    <a ui-sref="view1" class="btn btn-default btn-lg btn-block" ng-click="formCtrl.update(formCtrl.user)">Back</a>  
-    <a ui-sref="view3" class="btn btn-primary btn-lg btn-group-justified btn btn-success ng-disabled="form.$invalid" ng-click="formCtrl.update(user)">Next</a>
-    </div>
+        <input type="number" class="form-control" placeholder="Phone number" ng-model="formCtrl.user.phonenumber" required/>
+        <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+    </div><br />
+    <button ui-sref="view1" class="btn btn-default btn-lg btn-block" ng-click="formCtrl.update(formCtrl.user)">Back</button>  
+    <button ui-sref="view3" class="btn btn-primary btn-lg btn-group-justified btn btn-success ng-disabled="form.$invalid" 
+            ng-click="formCtrl.update(user)">Next</button>
+  </div>
   </form>
   <br>
   <br>

@@ -4,31 +4,25 @@
   <br>
   <div class="formBlock btn-group col-lg-12">
     <div class="radio">
-      <label><input type="radio" name="optradio" ng-model="formCtrl.user.income">Less than $25,000</label>
-    </div>
-    <br>
+      <label><input type="radio" name="optradio" ng-model="formCtrl.user.income" required>Less than $25,000</label>
+    </div><br>
     <div class="radio">
       <label><input type="radio" name="optradio" ng-model="formCtrl.user.income">$25,000 - $50,000</label>
-    </div>
-    <br>
+    </div><br>
     <div class="radio">
       <label><input type="radio" name="optradio" ng-model="formCtrl.user.income">$50,000 - $100,000</label>
-    </div>
-    <br />
+    </div><br />
     <div class="radio">
       <label><input type="radio" name="optradio" ng-model="formCtrl.user.income">$100,000 - $250,000</label>
-    </div>
-    <br />
+    </div><br />
         <div class="radio">
       <label><input type="radio" name="optradio" ng-model="formCtrl.user.income">$250,000+</label>
     </div><br />
-
     <div class="btn-block">
     <a ui-sref="view3" class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back</a>
     <a ui-sref="view5" class="btn btn-success btn-lg btn-block" ng-click="formCtrl.update(user)">Next</a>
     </div>
 
-    <!-- <a class="link" href="#">Already have an account?</a> -->
     </div>
   </form>
   <br>

@@ -23,9 +23,9 @@ body {
   margin-right:auto;
   font-sized: 1.5em;*/
   /*background: linear-gradient(to right, #E29AFA 10%, #0492A5 30% , #17AA78 90%);*/
-  background: linear-gradient(to bottom, #17AA78, #2FCD97);
+  /*background: linear-gradient(to bottom, #2FCD97, #17AA78);*/
   
-  /*background-color: #1D909E !important;*/
+  background-color: #17AA78 !important;
 }
 #banner {
   /*position: relative;*/

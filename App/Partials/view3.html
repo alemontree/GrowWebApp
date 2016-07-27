@@ -3,38 +3,31 @@
   <h2>What is the primary reason you are investing?</h2>
   <br>
   <div class="control-group col-lg-12">
-    <div class="formBlock btn-group col-lg-12" data-toggle="buttons">
       <div class="radio">
         <label>
         <input type="radio" name="optradio" value="Long-term investment" 
-                      ng-model="formCtrl.user.reason" required />Long-term investment</label>
-      </div>
-      <br>
+                ng-model="formCtrl.user.reason" required />Long-term investment</label>
+      </div><br>
       <div class="radio">
         <label>
         <input type="radio" name="optradio" value="Short-term investment" 
                 ng-model="formCtrl.user.reason" />Short-term investment</label>
-      </div>
-      <br>
+      </div><br>
       <div class="radio">
         <label>
         <input type="radio" name="optradio" value="Major purchase" 
                 ng-model="formCtrl.user.reason" />Major purchase</label>
-      </div>
-      <br>
+      </div><br>
       <div class="radio">
         <label>
         <input type="radio" name="optradio" value="Other" 
                 ng-model="formCtrl.user.reason" />Other</label>
-      </div>
-      <br>
-    <div class="btn-group.btn-group-justified col-lg-12">
-      <a ui-sref="view2" href="" class="btn btn-default btn-lg btn-block" ng-click="update(user)">Back</a>
-      <a ui-sref="view4" class="btn btn-success btn-lg btn-block" ng-click="formCtrl.update(user)">Next</a>
-    </div>
+      </div><br>
+      <button ui-sref="view2" class="btn btn-default btn-lg btn-block" ng-click="formCtrl.update(formCtrl.user)">Back</button>  
+      <button ui-sref="view4" class="btn btn-primary btn-lg btn-group-justified btn btn-success ng-disabled="form.$invalid" 
+              ng-click="formCtrl.update(user)">Next</button>
     </div><br />
 <!--     <a class="link" href="#">Already have an account?</a> -->
-    </div>
   </form>
 
   <br>
