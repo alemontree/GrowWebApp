@@ -30,7 +30,6 @@ angular.module('growWebApp', [
 
 function config($stateProvider, $urlRouterProvider, plaidLinkProvider) {
 
-
   plaidLinkProvider.init({
         clientName: 'My App',
         env: 'tartan',

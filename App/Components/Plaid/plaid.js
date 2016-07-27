@@ -1,8 +1,10 @@
 import angular from 'angular';
 import PlaidController from './plaid-controller';
+import FormService from '../Form/form-service';
 
 export default angular.module('angular-plaid-link', [])
   .controller('plaidController', PlaidController)
+  .service('formService', FormService)
   .provider('plaidLink', [
     function() {
       const configDefaults = {};
@@ -25,8 +27,8 @@ export default angular.module('angular-plaid-link', [])
                 loaded = true;
                 _triggerCallback(onLoadCallback);
               },
-              onSuccess: function(token) {
-                console.log(token);
+              onSuccess: function(token, metadata) {
+                console.log(token, metadata);
                 _triggerCallback(onSuccessCallback, token);
               }
             };

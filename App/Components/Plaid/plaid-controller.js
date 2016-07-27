@@ -3,8 +3,9 @@ import angular from 'angular';
 
 
 export default class PlaidController{
-  constructor(plaidLink) {
+  constructor(plaidLink, formService) {
     this.plaidLink = plaidLink;
+    this.formService = formService;
     let self = this;
     this.token = '';
     this.plaidIsLoaded = this.plaidLink.isLoaded;
@@ -13,7 +14,7 @@ export default class PlaidController{
         console.log(token);
         console.log(self.token);
         self.token = token;
-
+        self.formService.sendRequest(self.token);
       },
       onExit: function() {
         console.log('user closed');
