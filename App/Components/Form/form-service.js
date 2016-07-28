@@ -16,7 +16,37 @@ class FormService {
 //  return $http.post('api/services', user);
     this.master = angular.extend(this.master, user);
     console.log("master in service ", this.master);
-    this.http.post('api/services', this.master);
+    this.http({
+      url: 'http://localhost:9000/api/signup/',
+      method: "POST",
+      data: this.master,
+      withCredentials: true,
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      }
+    })
+    .then((response) => {
+          console.log(response);
+          console.log(response.status);
+        },
+        (response) => {
+          console.error('error: ', response);
+          console.log(response.status);
+        }
+      )
+
+
+
+    // this.http.post('http://localhost:32891/api/signup/', this.master)
+    //   .then((response) => {
+    //       console.log(response);
+    //       console.log(response.status);
+    //     },
+    //     (response) => {
+    //       console.error('error: ', response);
+    //       console.log(response.status);
+    //     }
+    //   )
 
     return user;
 

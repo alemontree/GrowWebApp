@@ -6,9 +6,7 @@ import angular from 'angular';
 export default class FormController {
   constructor($scope, formService) {
     this.formService = formService;
-    // console.log(this.dt)
-    // this.dt = new Date();
-    // console.log($scope.dt);
+
   }
 
   update(user) {

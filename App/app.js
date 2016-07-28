@@ -2,33 +2,32 @@
 import angular from 'angular';
 import AngularUiRouter from 'angular-ui-router';
 import AngularAnimate from 'angular-animate';
-// import AngularPlaidLink from '../node_modules/angular-plaid-link/src/angular-plaid-link';
 import "../grow.css";
 import AngularBootstrap from 'angular-ui-bootstrap';
 import Form from './Components/Form/form';
 import PlaidComponent from './Components/Plaid/plaid';
-// import plaid from 'plaid';
-
-// import plaid from 'ng-plaid';
-// import Datepicker from '/Utils/datepicker'; 
 
 
-angular.module('growWebApp', [
+let growWebApp = angular.module('growWebApp', [
             // frameworks
               AngularUiRouter,  
               AngularBootstrap,
+              AngularAnimate,
 
               // components
               PlaidComponent.name,
-
-              Form.name,
-              // angular-plaid-link.name
-              // PlaidComponent.name
+              Form.name
 
 ])
-.config(config);
+.config(config);  
 
-function config($stateProvider, $urlRouterProvider, plaidLinkProvider) {
+function config($stateProvider, $urlRouterProvider, plaidLinkProvider, $httpProvider) {
+
+  $httpProvider.defaults.useXDomain = true;
+  $httpProvider.defaults.headers.common = {};
+  $httpProvider.defaults.headers.post = {};
+  $httpProvider.defaults.headers.put = {};
+  $httpProvider.defaults.headers.patch = {};
 
   plaidLinkProvider.init({
         clientName: 'My App',
