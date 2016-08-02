@@ -17,7 +17,7 @@ class FormService {
     this.master = angular.extend(this.master, user);
     console.log("master in service ", this.master);
     this.http({
-      url: 'http://localhost:9000/api/signup/',
+      url: 'http://localhost:51937/api/signup/',
       method: "POST",
       data: this.master,
       withCredentials: true,

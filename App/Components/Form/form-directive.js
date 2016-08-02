@@ -6,14 +6,18 @@ import angular from 'angular';
 export default function compareTo()  {
   return {
     require: "ngModel",
-    controllerAs: 'formCtrl',
+    // controller: formController,
+    // controllerAs: 'formCtrl',
     scope: {
       otherModelValue: "=compareTo"
     },
     link: function(scope, element, attributes, ngModel) {
-       
+      
+      console.log("directive firing");
+      console.log(ngModel.$validate);
       ngModel.$validators.compareTo = function(modelValue) {
-        return modelValue == scope.otherModelValue;
+        console.log(modelValue, scope.otherModelValue);
+        return modelValue === scope.otherModelValue;
       }; 
       scope.$watch("otherModelValue", function() {
         ngModel.$validate();

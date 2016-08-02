@@ -28,11 +28,11 @@
           <span class="help-inline" ng-show="submitted && formCtrl.user.confirmPassword.$error.required">Required</span>
       </div><br/>
       <span class="help-inline" ng-show="submitted && form.confirmPassword.$error">Passwords are not equal!</span>
-      <button type="submit" ng-click="formCtrl.update(formCtrl.user)" ui-sref="view2" 
+      <button type="submit" ng-click="submitted=true; formCtrl.update(formCtrl.user)" ui-sref="view2" 
               class="btn btn-primary btn-lg btn-group-justified btn btn-success ng-disabled="form.$invalid" >Next</button>
   </div>
   </form>
-    
+
     
     <!-- <a class="link" href="#">Already have an account?</a> -->
 
